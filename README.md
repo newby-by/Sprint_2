@@ -10,3 +10,4 @@ Tomcat which gets up me early every morning
 2. The second task: create two child classes by the parent class.
 3. The third task: using a static method in a class.
 4. The fouth task: using a class method.
+5. The fifth task: using some tricks with dir and getattr.
