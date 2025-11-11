@@ -37,3 +37,8 @@ Fix make `get_email` class method.
 **Done**
 
 Fix get `hourly_payment` attribute of class by `self`.
+
+6. https://github.com/newby-by/Sprint_2/pull/1#discussion_r2511332698
+**Done**
+
+Fix get `hourly_payment` attribute of class by `cls`.
