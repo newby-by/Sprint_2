@@ -5,33 +5,33 @@ Using a static method in a class.
 
 RATE_0_5 = 0.5
 
+points = 0
+
 class PointsForPlace:
-    points = 0
 
     @staticmethod
     def get_points_for_place(place: int) -> int:
         if place > 100:
             print('Баллы начисляются только первым 100 участникам')
-            return PointsForPlace.points
+            return points
         if place < 1:
             print('Спортсмен не может занять нулевое или отрицательное место')
-            return PointsForPlace.points
+            return points
         
-        PointsForPlace.points = 101 - place
-        return PointsForPlace.points
+        points = 101 - place
+        return points
 
 
 class PointsForMeters:
-    points = 0
 
     @staticmethod
     def get_points_for_meters(meters: int) -> int:
         if meters < 0:
             print('Количество метров не может быть отрицательным')
-            return PointsForMeters.points
+            return points
                 
-        PointsForMeters.points = meters * RATE_0_5
-        return PointsForMeters.points
+        points = meters * RATE_0_5
+        return points
 
 
 class TotalPoints(PointsForPlace, PointsForMeters):
