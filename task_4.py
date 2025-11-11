@@ -26,12 +26,12 @@ class EmployeeSalary:
         
         return email
 
-    def salary(self):
-        return self.hours * EmployeeSalary.hourly_payment
-
     @classmethod
     def set_hourly_payment(cls, hourly_payment):
         EmployeeSalary.hourly_payment = hourly_payment
+
+    def salary(self):
+        return self.hours * self.hourly_payment
 
 
 if __name__ == "__main__":
@@ -46,3 +46,8 @@ if __name__ == "__main__":
 
     actual_email = EmployeeSalary.get_email(None, 'Mike')
     assert actual_email == 'Mike@email.com'
+
+    assert EmployeeSalary.hourly_payment == 400
+    
+    EmployeeSalary.set_hourly_payment(200)
+    assert EmployeeSalary.hourly_payment == 200
