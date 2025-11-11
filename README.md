@@ -27,3 +27,8 @@ Fix calles of methods by `super()` method.
 **Done**
 
 Fix make `get_hours` class method.
+
+4. https://github.com/newby-by/Sprint_2/pull/1#discussion_r2511330868
+**Done**
+
+Fix make `get_email` class method.

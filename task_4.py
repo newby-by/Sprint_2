@@ -19,11 +19,12 @@ class EmployeeSalary:
        
         return hours
 
-    def get_email(self):
-        if not self.email or self.email is None:
-            self.email = f'{self.name}@email.com'
+    @classmethod
+    def get_email(self, email, name):
+        if not email or email is None:
+            email = f'{name}@email.com'
         
-        return self.email
+        return email
 
     def salary(self):
         return self.hours * EmployeeSalary.hourly_payment
@@ -39,3 +40,9 @@ if __name__ == "__main__":
 
     actual_hour = EmployeeSalary.get_hours(None, 1)
     assert actual_hour == 48
+
+    actual_email = EmployeeSalary.get_email('Mike@email.com', None)
+    assert actual_email == 'Mike@email.com'
+
+    actual_email = EmployeeSalary.get_email(None, 'Mike')
+    assert actual_email == 'Mike@email.com'
