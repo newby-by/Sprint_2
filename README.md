@@ -17,3 +17,8 @@ Tomcat which gets up me early every morning
 **Done**
 
 The `points` is made global variable and fixed references in parent classes to it.
+
+2. https://github.com/newby-by/Sprint_2/pull/1#discussion_r2511330263
+**Done**
+
+Fix calles of methods by `super()` method. 
