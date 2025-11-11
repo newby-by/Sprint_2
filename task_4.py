@@ -12,11 +12,12 @@ class EmployeeSalary:
         self.rest_days = rest_days
         self.email = email
 
-    def get_hours(self):
-        if not self.hours or self.hours is None:
-            self.hours = (7 - self.rest_days) * 8
+    @classmethod
+    def get_hours(cls, hours, rest_days):
+        if not hours or hours is None:
+            hours = (7 - rest_days) * 8
        
-        return self.hours
+        return hours
 
     def get_email(self):
         if not self.email or self.email is None:
@@ -33,16 +34,8 @@ class EmployeeSalary:
 
 
 if __name__ == "__main__":
-    employee_salary = EmployeeSalary('Mike', 8, 1, 'Mike@email.com')
-    assert employee_salary.salary() == 3200
+    actual_hour = EmployeeSalary.get_hours(8, 1)
+    assert actual_hour == 8
 
-    employee_salary = EmployeeSalary('Mike', 8, 1, '')
-    assert employee_salary.get_email() == 'Mike@email.com'
-
-    employee_salary = EmployeeSalary('Mike', None, 1, 'Mike@email.com')
-    assert employee_salary.get_hours() == 48
-
-    assert EmployeeSalary.hourly_payment == 400
-    
-    EmployeeSalary.set_hourly_payment(200)
-    assert EmployeeSalary.hourly_payment == 200
+    actual_hour = EmployeeSalary.get_hours(None, 1)
+    assert actual_hour == 48

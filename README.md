@@ -22,3 +22,8 @@ The `points` is made global variable and fixed references in parent classes to i
 **Done**
 
 Fix calles of methods by `super()` method. 
+
+3. https://github.com/newby-by/Sprint_2/pull/1#discussion_r2511330652
+**Done**
+
+Fix make `get_hours` class method.
