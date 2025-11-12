@@ -35,6 +35,7 @@ class EmployeeSalary:
 
 
 if __name__ == "__main__":
+    # Tests for get_hours
     test_data_with_hours = {
         'name': 'Mike',
         'hours': 8,
@@ -55,18 +56,19 @@ if __name__ == "__main__":
     }
     employee_salary = EmployeeSalary.get_hours(*list(test_data_without_hours.values()))
     assert employee_salary.hours == 40, f'The actual hours is {employee_salary.hours}'
-
+    
+    # Tests for get_email
     test_data_with_email = {
         'name': 'Mike',
         'hours': 8,
         'rest_days': 1,
         'email': 'Mike@email.com'
     }
-    employee_salary = EmployeeSalary.get_hours(*list(test_data_with_email.values()))
-    assert employee_salary.__dict__['name'] == test_data_with_email['name']
-    assert employee_salary.__dict__['hours'] == test_data_with_email['hours']
-    assert employee_salary.__dict__['rest_days'] == test_data_with_email['rest_days']
-    assert employee_salary.__dict__['email'] == test_data_with_email['email']
+    employee_salary = EmployeeSalary.get_email(*list(test_data_with_email.values()))
+    assert employee_salary.name == test_data_with_email['name']
+    assert employee_salary.hours == test_data_with_email['hours']
+    assert employee_salary.rest_days == test_data_with_email['rest_days']
+    assert employee_salary.email == test_data_with_email['email']
 
     test_data_without_email = {
         'name': 'Mike',
