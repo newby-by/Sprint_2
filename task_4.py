@@ -13,11 +13,11 @@ class EmployeeSalary:
         self.email = email
 
     @classmethod
-    def get_hours(cls, hours, rest_days):
+    def get_hours(cls, name, hours, rest_days, email):
         if not hours or hours is None:
             hours = (7 - rest_days) * 8
        
-        return hours
+        return cls(name, hours, rest_days, email)
 
     @classmethod
     def get_email(self, email, name):
@@ -35,11 +35,26 @@ class EmployeeSalary:
 
 
 if __name__ == "__main__":
-    actual_hour = EmployeeSalary.get_hours(8, 1)
-    assert actual_hour == 8
+    test_data_with_hours = {
+        'name': 'Mike',
+        'hours': 8,
+        'rest_days': 1,
+        'email': 'Mike@email.com'
+    }
+    employee_salary = EmployeeSalary.get_hours(*list(test_data_with_hours.values()))
+    assert employee_salary.__dict__['name'] == test_data_with_hours['name']
+    assert employee_salary.__dict__['hours'] == test_data_with_hours['hours']
+    assert employee_salary.__dict__['rest_days'] == test_data_with_hours['rest_days']
+    assert employee_salary.__dict__['email'] == test_data_with_hours['email']
 
-    actual_hour = EmployeeSalary.get_hours(None, 1)
-    assert actual_hour == 48
+    test_data_without_hours = {
+        'name': 'Mike',
+        'hours': None,
+        'rest_days': 2,
+        'email': 'Mike@email.com'
+    }
+    employee_salary = EmployeeSalary.get_hours(*list(test_data_without_hours.values()))
+    assert employee_salary.hours == 40, f'The actual hours is {employee_salary.hours}'
 
     actual_email = EmployeeSalary.get_email('Mike@email.com', None)
     assert actual_email == 'Mike@email.com'

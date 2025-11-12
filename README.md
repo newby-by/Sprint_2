@@ -47,3 +47,9 @@ Fix get `hourly_payment` attribute of class by `cls`.
 **Done**
 
 Fix get `total` attribute of class by `self`.
+
+8. https://github.com/newby-by/Sprint_2/pull/1#discussion_r2517111052
+**Done**
+
+Refactor class method get_hours to a factory method.
+
