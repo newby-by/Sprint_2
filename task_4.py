@@ -43,10 +43,10 @@ if __name__ == "__main__":
         'email': 'Mike@email.com'
     }
     employee_salary = EmployeeSalary.get_hours(*list(test_data_with_hours.values()))
-    assert employee_salary.__dict__['name'] == test_data_with_hours['name']
-    assert employee_salary.__dict__['hours'] == test_data_with_hours['hours']
-    assert employee_salary.__dict__['rest_days'] == test_data_with_hours['rest_days']
-    assert employee_salary.__dict__['email'] == test_data_with_hours['email']
+    assert employee_salary.name == test_data_with_hours['name']
+    assert employee_salary.hours == test_data_with_hours['hours']
+    assert employee_salary.rest_days == test_data_with_hours['rest_days']
+    assert employee_salary.email == test_data_with_hours['email']
 
     test_data_without_hours = {
         'name': 'Mike',
