@@ -42,3 +42,8 @@ Fix get `hourly_payment` attribute of class by `self`.
 **Done**
 
 Fix get `hourly_payment` attribute of class by `cls`.
+
+7. https://github.com/newby-by/Sprint_2/pull/1#discussion_r2517108257
+**Done**
+
+Fix get `total` attribute of class by `self`.
