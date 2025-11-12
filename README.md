@@ -53,3 +53,7 @@ Fix get `total` attribute of class by `self`.
 
 Refactor class method get_hours to a factory method.
 
+9. https://github.com/newby-by/Sprint_2/pull/1#discussion_r2517111302
+**Done**
+
+Refactor class method get_email to a factory method.
